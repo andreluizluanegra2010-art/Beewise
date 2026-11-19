@@ -9,6 +9,8 @@ import { ThemedView } from '@/components/themed-view';
 import { WebBadge } from '@/components/web-badge';
 import { BottomTabInset, MaxContentWidth, Spacing } from '@/constants/theme';
 
+import { Link } from 'expo-router';
+
 function getDevMenuHint() {
   if (Platform.OS === 'web') {
     return <ThemedText type="small">use browser devtools</ThemedText>;
@@ -35,24 +37,36 @@ export default function HomeScreen() {
         <ThemedView style={styles.heroSection}>
           <AnimatedIcon />
           <ThemedText type="title" style={styles.title}>
-            Welcome to&nbsp;Expo
+            BeeWise
           </ThemedText>
         </ThemedView>
 
         <ThemedText type="code" style={styles.code}>
-          get started
+          Integrantes
         </ThemedText>
 
         <ThemedView type="backgroundElement" style={styles.stepContainer}>
           <HintRow
-            title="Try editing"
+            title="Alanis de Oliveira Peloso"
+            hint={<ThemedText type="code">250235</ThemedText>}
+          />
+          <HintRow
+            title="Anna Clara Lopes Felix"
             hint={<ThemedText type="code">src/app/index.tsx</ThemedText>}
           />
-          <HintRow title="Dev tools" hint={getDevMenuHint()} />
           <HintRow
-            title="Fresh start"
-            hint={<ThemedText type="code">npm run reset-project</ThemedText>}
+            title="André Luiz Zanelatto Tulio"
+            hint={<ThemedText type="code">2504030</ThemedText>}
           />
+          <HintRow
+            title="Davi Siqueira Caredoso dos Santos"
+            hint={<ThemedText type="code">260264</ThemedText>}
+          />
+          <HintRow
+            title="Jhonatan Moraes"
+            hint={<ThemedText type="code">260386</ThemedText>}
+          />
+          
         </ThemedView>
 
         {Platform.OS === 'web' && <WebBadge />}
@@ -61,11 +75,23 @@ export default function HomeScreen() {
   );
 }
 
+
+
 const styles = StyleSheet.create({
+  text: {
+    color: '#fff',
+  },
+  button: {
+    fontSize: 20,
+    textDecorationLine: 'underline',
+    color: '#fff',
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
     flexDirection: 'row',
+    alignItems: 'center',
+    backgroundColor: '#25292e',
   },
   safeArea: {
     flex: 1,
